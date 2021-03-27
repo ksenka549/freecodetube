@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use \yii\helpers\StringHelper;
+use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Video */
 
@@ -21,7 +22,7 @@ use \yii\helpers\StringHelper;
     <div class="card-body p-2">
         <h6 class="card-title m-0"><?php echo $model->title ?></h6>
         <p class="text-muted card-text m-0">
-            <?php echo $model->createdBy->username ?>
+            <?php echo \common\helpers\Html::channelLink($model->createdBy) ?>
         </p>
         <p class="text-muted card-text m-0">
             <?php echo $model->getViews()->count() ?> views •
